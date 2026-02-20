@@ -70,4 +70,26 @@ def represent(board: Board):
         matrix[channels["ep"], ep_row, ep_col] = 1
   move_matrix = torch.zeros((64,64))
   return matrix
+def generate_input(games):
+  X = []
+  y = []
+  for game in games:
+    board = game.board()
+    moves = list(game.mainline_moves())
+    result = game.headers["Result"]
+    if result not in ["1-0", "0-1", "1/2-1/2"]:
+        continue
+    if result == "1-0":
+        label = 1
+    elif result == "0-1":
+        label = -1
+    else:
+        label = 0
+    k = random.randint(1, len(moves))
+    moves = moves[0:k]
+    for move_index,move in enumerate(moves):
+      board.push(move)
+      if move_index > 4:
+        X.append(represent(board))
+        y.append(label)
 
