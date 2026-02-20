@@ -10,6 +10,7 @@ Original file is located at
 
 import torch
 import chess
+import random
 from chess import pgn
 from chess import Board
 
