@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1HoYQuBiwzWpZ_lIS5A-yJIgpz30zNUDL
 """
 
-!pip install chess
 
 import torch
 import chess
