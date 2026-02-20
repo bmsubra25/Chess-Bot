@@ -78,6 +78,7 @@ def generate_input(games):
     board = game.board()
     moves = list(game.mainline_moves())
     result = game.headers["Result"]
+    print(result)
     if result not in ["1-0", "0-1", "1/2-1/2"]:
         continue
     if result == "1-0":
