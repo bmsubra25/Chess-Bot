@@ -92,4 +92,5 @@ def generate_input(games):
       if move_index > 4:
         X.append(represent(board))
         y.append(label)
+    return X,y
 
