@@ -78,7 +78,6 @@ def generate_input(games):
     board = game.board()
     moves = list(game.mainline_moves())
     result = game.headers["Result"]
-    print(result)
     if result not in ["1-0", "0-1", "1/2-1/2"]:
         continue
     if result == "1-0":
@@ -87,7 +86,7 @@ def generate_input(games):
         label = -1
     else:
         label = 0
-    k = random.randint(1, len(moves))
+    k = random.randint(1, len(moves)+1)
     moves = moves[0:k]
     for move_index,move in enumerate(moves):
       board.push(move)
